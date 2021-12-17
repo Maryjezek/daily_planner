@@ -69,3 +69,17 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+
+
+.container .time-slot {
+  box-sizing: border-box;
+  display:grid;
+  border-top: 1px solid;
+  grid-template-areas: "row  time-slot";
+  grid-template-columns: 120px;
+  grid-template-rows: 60px;
+  width: 40vw;
+  margin: 0 auto;
+  box-shadow: 0 2px 20px rga(0, 0, 0.20)
+}
