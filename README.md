@@ -27,3 +27,4 @@ THEN the saved events persist
 link to live website:
 https://maryjezek.github.io/daily_planner/
 
+![image](https://user-images.githubusercontent.com/37507020/146617316-ac082bcd-fb83-414a-a76f-f23255b49a9e.png)
