@@ -37,16 +37,21 @@ $(".session").each(function () {
     $(this).find("h4").text(timeslotValue);
   }
   var time = $(this).attr("data-time");
-  console.log(moment().format("ha"));
-  console.log(time);
-  if (time == moment().format("ha")) {
+  //console.log(moment().format("hh"),time,parseInt(time) < parseInt(moment().format("hh")));
+  //console.log(time);
+  //console.log(typeof parseInt(time));
+  //console.log(typeof parseInt(moment().format("hh")));
+  if (time == moment().format("hh")) {
     $(this).addClass("present");
+    console.log("present", $(this))
   }
-  //this doesn't work
-  if (time < moment().format("ha")) {
+  
+  if (parseInt(time) < parseInt(moment().format("hh"))) {
     $(this).addClass("past");
+    console.log("past", $(this))
   }
-  if (time > moment().format("ha")) {
+  if (parseInt(time) > parseInt(moment().format("hh"))) {
     $(this).addClass("future");
+    console.log("future", $(this))
   }
 });
