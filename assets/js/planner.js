@@ -26,6 +26,10 @@ $(".session").on("blur", "textarea.form-control", function () {
   var text = $(this).val();
   var h4 = $("<h4>").addClass("session-title").text(text);
   var id = $(this).parent()[0].id;
+  console.log($(this))
+  console.log($(this).parent())
+  console.log($(this).parent()[0])
+  console.log($(this).parent()[0].id)
 
   $(this).replaceWith(h4);
   localStorage.setItem(id, text);
@@ -38,20 +42,29 @@ $(".session").each(function () {
   }
   var time = $(this).attr("data-time");
   //console.log(moment().format("hh"),time,parseInt(time) < parseInt(moment().format("hh")));
+  //console.log(moment().format("hh"));
   //console.log(time);
   //console.log(typeof parseInt(time));
+  var currentTime = moment().hour();
   //console.log(typeof parseInt(moment().format("hh")));
-  if (time == moment().format("hh")) {
+  if (time == currentTime) {
     $(this).addClass("present");
+    $(this).removeClass("future");
+    $(this).removeClass("past");
+
     console.log("present", $(this))
   }
   
-  if (parseInt(time) < parseInt(moment().format("hh"))) {
+  if (parseInt(time) < parseInt(currentTime)) {
     $(this).addClass("past");
+    $(this).removeClass("future");
+    $(this).removeClass("present");
     console.log("past", $(this))
   }
-  if (parseInt(time) > parseInt(moment().format("hh"))) {
+  if (parseInt(time) > parseInt(currentTime)) {
     $(this).addClass("future");
+    $(this).removeClass("present");
+    $(this).removeClass("past");
     console.log("future", $(this))
   }
 });
